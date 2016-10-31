@@ -1,15 +1,15 @@
 html, body {
     margin: 0; padding: 0; background-color: #ffffff; font-family: Tahoma, Sans-Serif;
-    font-size: 10pt; overflow: auto; height: 100%;
+    font-size: 10pt; overflow: auto; height: 100%; color: #e9eee7;
 }
-div#map_container     { float: left; width: 100%; height: 100%; }
+div#map_container     { float: left; width: 100%; height: 100%; background: #393f4c}
 div#map_canvas        { height: 100%; margin-right: 420px; }
 
 div#sidebar_container { float: left; width: 410px; margin-left: -410px; height: 100%; overflow: auto; }
 
 div#SpecialSquawkWarning { position: absolute; bottom: 25px; right: 430px; border: 2px solid red;
     background-color: #FFFFA3; opacity: 0.75; filter:alpha(opacity=75); padding: 5px;
-    text-align: center; }
+    text-align: center; display: none !important}
 
 div#update_error { position: absolute; bottom: 25px; left: 25px; border: 2px solid red;
     background-color: #FFFFA3; opacity: 0.75; filter:alpha(opacity=75); padding: 5px;
@@ -21,13 +21,13 @@ div#loader { z-index: 99; position: absolute; left: 0; top: 0; bottom: 0; right:
 
 #tableinfo, #sudo_buttons { font-size: x-small; font-family: monospace; }
 
-.vPosition  { font-weight: bold; background-color: #d5ffd5; }
+.vPosition  { font-weight: bold; color: #0cf973; }
 .mlat       { font-weight: bold; background-color: #d5d5ff; }
 .squawk7500 { font-weight: bold; background-color: #ff5555; }
 .squawk7600 { font-weight: bold; background-color: #00ffff; }
 .squawk7700 { font-weight: bold; background-color: #ffff00; }
-.selected   { background-color: #dddddd; }
-.plane_table_row { cursor: pointer; }
+.selected   { background-color: #0cf973 !important;color: #272b35 }
+.plane_table_row { cursor: pointer; background: #272b35}
 .hidden { display: none; }
 
 .infoblock_heading    { font-size: larger; }
@@ -41,4 +41,8 @@ div#loader { z-index: 99; position: absolute; left: 0; top: 0; bottom: 0; right:
 .dim    { opacity: 0.3; filter:alpha(opacity=30); /* For IE8 and earlier */ }
 
 .pointer { cursor: pointer; }
-
+#timestamps {display: none}
+thead{background: #5675b9 !important;}
+a{color: #e9eee7 !important;}
+.layer-switcher{color: black}
+.ol-attribution a{color: black !important};
