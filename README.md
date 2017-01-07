@@ -34,6 +34,14 @@ This means:
 * There are a couple of new layers - Bing and Mapzen - that can be enabled by providing an API key
   in config.js. See the comments in config.js for details.
 
+# Install
+git clone https://github.com/chaos-consulting/dump1090.git
+
+dpkg-buildpackage -b
+
+sudo dpkg -i dump1090-mutability_1.15~dev_armhf.deb
+
+
 # Simple install via apt-get
 
 There is a repository that contains the current releases. To set up the repository:
