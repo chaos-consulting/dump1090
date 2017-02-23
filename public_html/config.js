@@ -18,7 +18,7 @@ MessageRateInTitle = true;
 // then the other unit will also be shown in the detailed plane
 // info.
 Metric = true;
-ShowOtherUnits = true;
+ShowOtherUnits = false;
 
 // -- Map settings ----------------------------------------
 // These settings are overridden by any position information
@@ -26,8 +26,8 @@ ShowOtherUnits = true;
 // degrees.
 
 // Default center of the map.
-DefaultCenterLat = 45.0;
-DefaultCenterLon = 9.0;
+DefaultCenterLat = 51.0;
+DefaultCenterLon = 7.0;
 // The google maps zoom level, 0 - 16, lower is further out
 DefaultZoomLvl   = 7;
 
@@ -35,8 +35,8 @@ DefaultZoomLvl   = 7;
 // that location is used and these settings are ignored.
 
 SiteShow    = false;           // true to show a center marker
-SiteLat     = 51.22;            // position of the marker
-SiteLon     = 7.81;
+SiteLat     = 45.0;            // position of the marker
+SiteLon     = 9.0;
 SiteName    = "My Radar Site"; // tooltip of the marker
 
 // -- Marker settings -------------------------------------
@@ -48,7 +48,8 @@ ColorByAlt = {
         unknown : { h: 0,   s: 0,   l: 40 },
 
         // HSL for planes that are on the ground:
-        ground  : { h: 120, s: 100, l: 30 },
+        //ground  : { h: 120, s: 100, l: 30 },
+	ground  : { h: 0, s: 0, l: 50 },
 
         air : {
                 // These define altitude-to-hue mappings
@@ -75,21 +76,12 @@ ColorByAlt = {
         selected : { h: 0, s: -10, l: +20 },
 
         // Changes added to the color of planes that have stale position info
-        stale :    { h: 0, s: -10, l: +30 },
+        //stale :    { h: 0, s: -10, l: +30 },
+	stale :    { h: 0, s: 0, l: 0 },
 
         // Changes added to the color of planes that have positions from mlat
         mlat :     { h: 0, s: -10, l: -10 }
 };
-
-// For a monochrome display try this:
-// ColorByAlt = {
-//         unknown :  { h: 0, s: 0, l: 40 },
-//         ground  :  { h: 0, s: 0, l: 30 },
-//         air :      { h: [ { alt: 0, val: 0 } ], s: 0, l: 50 },
-//         selected : { h: 0, s: 0, l: +30 },
-//         stale :    { h: 0, s: 0, l: +30 },
-//         mlat :     { h: 0, s: 0, l: -10 }
-// };
 
 // Outline color for aircraft icons with an ADS-B position
 OutlineADSBColor = '#000000';
@@ -99,13 +91,13 @@ OutlineMlatColor = '#4040FF';
 
 SiteCircles = true; // true to show circles (only shown if the center marker is shown)
 // In nautical miles or km (depending settings value 'Metric')
-SiteCirclesDistances = new Array(100,150,200);
+SiteCirclesDistances = new Array(100,200,300,400);
 
 // Show the clocks at the top of the righthand pane? You can disable the clocks if you want here
 ShowClocks = false;
 
 // Controls page title, righthand pane when nothing is selected
-PageName = "DUMP1090";
+PageName = "adsb c2is";
 
 // Show country flags by ICAO addresses?
 ShowFlags = true;
@@ -114,7 +106,7 @@ ShowFlags = true;
 FlagPath = "flags-tiny/";
 
 // Set to true to enable the ChartBundle base layers (US coverage only)
-ChartBundleLayers = true;
+ChartBundleLayers = false;
 
 // Provide a Bing Maps API key here to enable the Bing imagery layer.
 // You can obtain a free key (with usage limits) at
