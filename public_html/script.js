@@ -12,6 +12,22 @@ var SelectedPlane = null;
 var FollowSelected = false;
 
 var SpecialSquawks = {
+        '0020' : { cssClass: 'squawk0020', markerColor: 'rgb(255, 85, 85)', text: 'Hubschrauber-Rettungsflüge' },
+        '0023' : { cssClass: 'squawk0023', markerColor: 'rgb(255, 85, 85)', text: 'Einsatzflüge der Bundespolizei' },
+        '0024' : { cssClass: 'squawk0024', markerColor: 'rgb(255, 85, 85)', text: 'Militärische Flüge im Nachttiefflugsystem, die Geländefolgeflüge durchführen' },
+        '0025' : { cssClass: 'squawk0025', markerColor: 'rgb(255, 85, 85)', text: 'Absetzluftfahrzeug' },
+        '0027' : { cssClass: 'squawk0027', markerColor: 'rgb(255, 85, 85)', text: 'Kunstflüge' },
+        '0030' : { cssClass: 'squawk0030', markerColor: 'rgb(255, 85, 85)', text: 'Vermessungsflüge' },
+        '0031' : { cssClass: 'squawk0031', markerColor: 'rgb(255, 85, 85)', text: 'Open Skies-Flüge' },
+        '0032' : { cssClass: 'squawk0032', markerColor: 'rgb(255, 85, 85)', text: 'VFR-Flüge von zivilen Luftfahrzeugen in der Identifizierungszone' },
+        '0033' : { cssClass: 'squawk0033', markerColor: 'rgb(255, 85, 85)', text: 'VFR-Flüge von militärischen Luftfahrzeugen zwischen GND und FL 100' },
+        '0034' : { cssClass: 'squawk0034', markerColor: 'rgb(255, 85, 85)', text: 'SAR-Einsätze' },
+        '0035' : { cssClass: 'squawk0035', markerColor: 'rgb(255, 85, 85)', text: 'VFR / IFR Wechselverfahren' },
+        '0036' : { cssClass: 'squawk0036', markerColor: 'rgb(255, 85, 85)', text: 'Einsatzflüge der Polizei' },
+        '0037' : { cssClass: 'squawk0037', markerColor: 'rgb(255, 85, 85)', text: 'Einsatzflüge der Polizei mit Restlichtverstärker' },
+        //'1000' : { cssClass: 'squawk1000', markerColor: 'rgb(255, 85, 85)', text: 'IFR / Mode S Transponder Code' },
+	'2000' : { cssClass: 'squawk2000', markerColor: 'rgb(255, 85, 85)', text: 'Militärische Flüge im Nachttiefflugsystem' },
+        '7000' : { cssClass: 'squawk7000', markerColor: 'rgb(255, 85, 85)', text: 'VFR-Flüge ziviler Luftfahrzeuge' },
         '7500' : { cssClass: 'squawk7500', markerColor: 'rgb(255, 85, 85)', text: 'Aircraft Hijacking' },
         '7600' : { cssClass: 'squawk7600', markerColor: 'rgb(0, 255, 255)', text: 'Radio Failure' },
         '7700' : { cssClass: 'squawk7700', markerColor: 'rgb(255, 255, 0)', text: 'General Emergency' }
@@ -679,6 +695,11 @@ function refreshSelected() {
         
         if (selected.flight !== null && selected.flight !== "") {
                 $('#selected_callsign').text(selected.flight);
+		$('#selected_history_link').attr('href','http://airlog.chaos-consulting.de/heatmap.php?t='+selected.flight);
+		$('#selected_pic0_link').attr('href','planepics/'+selected.registration+'.jpg');
+                $('#selected_pic0').attr('src','planepics/'+selected.registration+'.jpg');
+                $('#selected_pic_link').attr('href','planepics/'+selected.icaotype+'.jpg');
+		$('#selected_pic').attr('src','planepics/'+selected.icaotype+'.jpg');
                 $('#selected_links').css('display','inline');
                 $('#selected_fr24_link').attr('href','http://fr24.com/'+selected.flight);
                 $('#selected_flightstats_link').attr('href','http://www.flightstats.com/go/FlightStatus/flightStatusByFlight.do?flightNumber='+selected.flight);
