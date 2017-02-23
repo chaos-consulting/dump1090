@@ -27,6 +27,7 @@ div#loader { z-index: 99; position: absolute; left: 0; top: 0; bottom: 0; right:
 .squawk7600 { font-weight: bold; background-color: #00ffff; }
 .squawk7700 { font-weight: bold; background-color: #ffff00; }
 .selected   { background-color: #0cf973 !important;color: #272b35 }
+.chx   { background-color: #ff0000 !important;color: #272b35 }
 .plane_table_row { cursor: pointer; background: #272b35}
 .hidden { display: none; }
 
@@ -46,3 +47,4 @@ thead{background: #5675b9 !important;}
 a{color: #e9eee7 !important;}
 .layer-switcher{color: black}
 .ol-attribution a{color: black !important};
+
